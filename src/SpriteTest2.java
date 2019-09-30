@@ -30,8 +30,8 @@ public class SpriteTest2 {
 		//load images
 		bgImage = loadImage("images/background.jpg");
 		Image player1 = loadImage("images/player1.png");
-		Image player2 = loadImage("images/player1.png");
-		Image player3 = loadImage("images/player1.png");
+		Image player2 = loadImage("images/player2.png");
+		Image player3 = loadImage("images/player3.png");
 		
 		//create and init sprites
 		sprites = new Sprite[NUM_SPRITES];
@@ -88,6 +88,7 @@ public class SpriteTest2 {
 			draw(g);
 			drawFade(g, currTime - startTime);
 			g.dispose();
+			screen.update();
 			
 			//take a nap
 			try {
@@ -102,7 +103,7 @@ public class SpriteTest2 {
 		if(currTime <= FADE_TIME) {
 			time = FADE_TIME - currTime;
 		}
-		else if(currTime > DMEO_TIME - FADE_TIME) {
+		else if(currTime > DEMO_TIME - FADE_TIME) {
 			time = FADE_TIME - DEMO_TIME + currTime;
 		}
 		else {
