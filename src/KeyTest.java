@@ -24,7 +24,10 @@ public class KeyTest extends GameCore1 implements KeyListener {
 		Window window = screen.getFullScreenWindow();
 		
 		/*
-		 * Allow input on the TAB key and other keys normally used for focus traversal
+		 * Allow input on the TAB key and other keys normally used for focus traversal. It disables docus traversal
+		 * keys. Focus traversal keys are the keys pressed to change the keyboard focus from one component to another.it
+		 * allows us to receive the value of keys such as the TAB key instead of being swallowed up by the AWT's focus
+		 * traversal code.
 		 */
 		window.setFocusTraversalKeysEnabled(false);
 		
@@ -44,7 +47,10 @@ public class KeyTest extends GameCore1 implements KeyListener {
 		}else {
 			addMessage("Pressed: " + KeyEvent.getKeyText(keyCode));
 			
-			//make sure the key isn't processed for anything else
+			//make sure the key isn't processed for anything else. Key combinations such as Alt+F are ignored as keys
+			//such as the Alt key is used to activate a mnemonic whihc is a shorcut key for a particular interface element
+			//and it is treated as one when pressed before another letter such as alt+C. e.consume() stops this behavior.
+			//It makes sure the alt key is treated as a normal key.
 			e.consume();
 		}
 	}
