@@ -6,7 +6,7 @@ public class GameAction {
 	/*
 	 * Normal behavior. The isPressed() mehtod returns true as long as the key is held down.
 	 */
-	public static final int NORMAL = 0;
+	public static final int NORMAL = 0;	
 	
 	/*
 	 * Initial press behavior. The isPressed() method returns true only after the key is pressed, and not again until the key is released and pressed again.
