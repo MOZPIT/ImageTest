@@ -29,7 +29,7 @@ public class MenuTest extends InputManagerTest implements ActionListener{
 		
 		//create buttons
 		quitButton = createButton("quit", "Quit");
-		playButton = createButton("plate", "Continue");
+		playButton = createButton("play", "Continue");
 		pauseButton = createButton("pause", "Pause");
 		configButton = createButton("config", "Change Settings");
 		
@@ -93,7 +93,7 @@ public class MenuTest extends InputManagerTest implements ActionListener{
 			configAction.tap();
 		}else if(src == playButton || src == pauseButton) {
 			//fire the "pause" gameAction
-			super.pause.tap();
+			 super.pause.tap();
 		}
 	}
 	
