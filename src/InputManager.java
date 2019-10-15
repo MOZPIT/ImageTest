@@ -159,6 +159,23 @@ public class InputManager implements KeyListener, MouseListener, MouseMotionList
 	}
 	
 	/*
+	 * Resets all GameActiosn so they appear like they haven't been pressed.
+	 */
+	public void resetAllGameActions() {
+		for(int i = 0; i<keyActions.length; i++) {
+			if(keyActions[i] != null) {
+				keyActions[i].reset();
+			}
+		}
+		
+		for(int i=0; i<mouseActions.length; i++) {
+			if(mouseActions[i] != null) {
+				mouseActions[i].reset();
+			}
+		}
+	}
+	
+	/*
 	 * Gets the name of a key code.
 	 */
 	public static String getKeyName(int keyCode) {
